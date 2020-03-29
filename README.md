@@ -5,7 +5,8 @@ Steps to take:
 
 - Register for an AdGlare Ad Server account if you don't have one: https://www.adglare.com
 - Set up your campaigns, create a zone and assign your campaigns.
-- Prepare the variables needed:
+
+Prepare the variables needed:
 
 - you can find the zID (zone ID) on the Properties tab of a zone.
 - you can find the ad serving domain in the Ad Tag Generator of a zone.

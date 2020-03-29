@@ -13,6 +13,6 @@ Prepare the variables needed:
 
 What's left is to add a DIV or SPAN to your pages where the ads should be shown. It can be something like:
 
-\<span id=ad_placeholder_123\></span>
+\<span id=ad_placeholder_123\>\</span\>
 
 In the GTM template, enter these variables and you should be ready to go. If you need further help setting this up, feel free to contact support. You can expect an answer within hours. Page: https://www.adglare.com/contact

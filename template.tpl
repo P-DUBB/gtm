@@ -61,7 +61,7 @@ ___TEMPLATE_PARAMETERS___
     "name": "containerID",
     "displayName": "DIV Container ID",
     "simpleValueType": true,
-    "help": "**Only required for Display Ads** Enter the ID of the DIV container on your website where the ad should be displayed.",
+    "help": "Only required for Display Ads. Enter the ID of the DIV container on your website where the ad should be displayed.",
     "valueHint": "zone_in_sidebar",
     "canBeEmptyString": true
   },
@@ -79,30 +79,20 @@ ___TEMPLATE_PARAMETERS___
 
 ___SANDBOXED_JS_FOR_WEB_TEMPLATE___
 
-// require relevant API
+// require relevant APIs
 const injectScript = require('injectScript');
 const queryPermission = require('queryPermission');
 const encodeUriComponent = require('encodeUriComponent');
-const logToConsole = require('logToConsole');
-
-// log data
-logToConsole('data =', data);
+const getTimestamp = require('getTimestamp');
 
 // capture values of template fields
-var url = 'https://'+data.domain+'/?'+data.zID;
-if(data.containerID) url += '&containerID='+encodeUriComponent(data.containerID);
-if(data.keywords) url += '&keywords='+encodeUriComponent(data.keywords);
+var url = 'https://'+data.domain+'/?' + data.zID + '&cb=' + getTimestamp();
+if (data.containerID) url += '&containerID=' + encodeUriComponent(data.containerID);
+if (data.keywords) url += '&keywords=' + encodeUriComponent(data.keywords);
 
-const onSuccess = () => {
-  data.gtmOnSuccess();
-};
-
-const onFailure = () => {
-  data.gtmOnFailure();
-};
-
+// inject script
 if (queryPermission('inject_script', url)) {
-  injectScript(url, onSuccess, onFailure);
+  injectScript(url, data.gtmOnSuccess, data.gtmOnFailure);
 } else {
   data.gtmOnFailure();
 }
@@ -111,24 +101,6 @@ if (queryPermission('inject_script', url)) {
 ___WEB_PERMISSIONS___
 
 [
-  {
-    "instance": {
-      "key": {
-        "publicId": "logging",
-        "versionId": "1"
-      },
-      "param": [
-        {
-          "key": "environments",
-          "value": {
-            "type": 1,
-            "string": "debug"
-          }
-        }
-      ]
-    },
-    "isRequired": true
-  },
   {
     "instance": {
       "key": {
@@ -165,6 +137,6 @@ scenarios: []
 
 ___NOTES___
 
-Created on 3/29/2020, 3:38:05 PM
+Created on 3/31/2020, 6:07:41 PM
 
 

@@ -86,7 +86,7 @@ const encodeUriComponent = require('encodeUriComponent');
 const getTimestamp = require('getTimestamp');
 
 // capture values of template fields
-var url = 'https://'+data.domain+'/?' + data.zID + '&cb=' + getTimestamp();
+var url = 'https://'+data.domain+'/?' + encodeUriComponent(data.zID) + '&cb=' + encodeUriComponent(getTimestamp());
 if (data.containerID) url += '&containerID=' + encodeUriComponent(data.containerID);
 if (data.keywords) url += '&keywords=' + encodeUriComponent(data.keywords);
 

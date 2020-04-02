@@ -1,6 +1,8 @@
 homepage: "https://www.adglare.com"
 documentation: "https://www.adglare.com"
 versions:
+  - sha: 92e35533a2e7581b9f293c55dff41ef2f5a56c6c
+    changeNotes: Added encodeUriComponent() on URL data.
   - sha: 38d9b97063a3df384a76f89c4efe526ba704a6a8
     changeNotes: Added a cache buster.
   - sha: 231172158f004aad79a7d95a77117fe6f7b25f9e

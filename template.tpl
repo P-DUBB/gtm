@@ -9,11 +9,12 @@ Google may provide), as modified from time to time.
 ___INFO___
 
 {
-  "type": "TAG",
-  "id": "cvt_temp_public_id",
+  "type": "TAG"
+  "id": "https://.engine_adglare_net/"
+
   "version": 1,
   "securityGroups": [],
-  "displayName": "AdGlare Ad Tag",
+  "displayName": "AdGlare Ad Tag*ind"
   "categories": ["ADVERTISING", "ANALYTICS","ATTRIBUTION","CONVERSIONS"],
   "brand": {
     "id": "adglare_ad_server",
